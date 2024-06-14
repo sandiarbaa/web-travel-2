@@ -1,58 +1,61 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+import Hero from "./Components/Hero";
+import MobileNav from "./Components/MobileNav";
+import Navbar from "./Components/Navbar";
+import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Home() {
+  const [nav, setNav] = useState(false);
+  const openNavHandler = () => setNav(true);
+  const closeNavHandler = () => setNav(false);
+
+  useEffect(() => {
+    AOS.init({
+      // Global settings:
+      disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+      startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
+      initClassName: "aos-init", // class applied after initialization
+      animatedClassName: "aos-animate", // class applied on animation
+      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+      disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+      debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+      throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+      // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+      offset: 120, // offset (in px) from the original trigger point
+      delay: 0, // values from 0 to 3000, with step 50ms
+      duration: 1000, // values from 0 to 3000, with step 50ms
+      easing: "ease", // default easing for AOS animations
+      once: true, // whether animation should happen only once - while scrolling down
+      mirror: false, // whether elements should animate out while scrolling past them
+      anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+    });
+  }, []);
   return (
-    <div className="w-full h-[100vh] relative">
-      <div className="absolute top-0 left-0 h-[100%] w-[100%] bg-blue-800/50"></div>
-      <video
-        src="/images/hero.mp4"
-        muted
-        loop
-        autoPlay
-        className="w-[100%] h-[100%] object-cover"
-      ></video>
-      {/* Navbar */}
-      <nav id="home" className="w-full bg-white absolute top-0">
-        <div className="flex w-4/5 mx-auto items-center justify-between py-4 h-[14vh]">
-          <div className="relative cursor-pointer w-16 h-16 lg:w-20 lg:h-20">
-            <Image
-              src="/images/logo.png"
-              alt="logo"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-          <div className="flex items-center space-x-6 lg:space-x-12">
-            <Link href="#home" className="nav-link">
-              Home
-            </Link>
-            <Link href="#tour" className="nav-link">
-              Tour
-            </Link>
-            <Link href="#hotel" className="nav-link">
-              Hotel
-            </Link>
-            <Link href="#review" className="nav-link">
-              Review
-            </Link>
-            <Link href="#contact" className="nav-link">
-              Contact
-            </Link>
-            <Link
-              href="#hotel"
-              className="relative hidden lg:inline-flex items-center justify-center px-6 py-2 lg:px-10 lg:py-3 overflow-hidden font-medium tracking-tighter text-white bg-gray-800 rounded-lg group"
-            >
-              <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-600 rounded-full group-hover:w-56 group-hover:h-56"></span>
-              <span className="relative">Book Now</span>
-            </Link>
-            {/* <Bars3Icon
-              onClick={openNav}
-              className="w-[2rem] lg:hidden h-[2rem] text-blue-800 font-bold"
-            /> */}
-          </div>
-        </div>
-      </nav>
+    <div className="overflow-x-hidden">
+      {/* NAVBAR */}
+      <MobileNav nav={nav} closeNav={closeNavHandler} />
+      <Navbar openNav={openNavHandler} />
+
+      {/* HERO */}
+      <Hero />
+
+      {/* TOP DESTINATION */}
+      {/* <TopDestination /> */}
+
+      {/* HOTELS */}
+      {/* <Hotels /> */}
+
+      {/* REVIEWS */}
+      {/* <Reviews /> */}
+
+      {/* CONTACT */}
+      {/* <Contact /> */}
+
+      {/* FOOTER */}
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import TopDestination from "./Components/TopDestination";
 import Hotels from "./Components/Hotels";
+import Reviews from "./Components/Reviews";
 
 export default function Home() {
   const [nav, setNav] = useState(false);
@@ -51,7 +52,7 @@ export default function Home() {
       <Hotels />
 
       {/* REVIEWS */}
-      {/* <Reviews /> */}
+      <Reviews />
 
       {/* CONTACT */}
       {/* <Contact /> */}

@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import TopDestination from "./Components/TopDestination";
 import Hotels from "./Components/Hotels";
 import Reviews from "./Components/Reviews";
+import Contact from "./Components/Contact";
 
 export default function Home() {
   const [nav, setNav] = useState(false);
@@ -55,7 +56,7 @@ export default function Home() {
       <Reviews />
 
       {/* CONTACT */}
-      {/* <Contact /> */}
+      <Contact />
 
       {/* FOOTER */}
       {/* <Footer /> */}

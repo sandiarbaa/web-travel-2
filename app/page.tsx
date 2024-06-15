@@ -9,6 +9,7 @@ import TopDestination from "./Components/TopDestination";
 import Hotels from "./Components/Hotels";
 import Reviews from "./Components/Reviews";
 import Contact from "./Components/Contact";
+import Footer from "./Components/Footer";
 
 export default function Home() {
   const [nav, setNav] = useState(false);
@@ -59,7 +60,7 @@ export default function Home() {
       <Contact />
 
       {/* FOOTER */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

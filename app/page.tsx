@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import TopDestination from "./Components/TopDestination";
 
 export default function Home() {
   const [nav, setNav] = useState(false);
@@ -43,7 +44,7 @@ export default function Home() {
       <Hero />
 
       {/* TOP DESTINATION */}
-      {/* <TopDestination /> */}
+      <TopDestination />
 
       {/* HOTELS */}
       {/* <Hotels /> */}

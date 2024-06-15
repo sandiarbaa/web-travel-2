@@ -9,9 +9,9 @@ interface Props {
 
 const Navbar = ({ openNav }: Props) => {
   return (
-    <nav className="w-full bg-white">
-      <div className="flex w-4/5 mx-auto items-center justify-between py-4 h-[12vh]">
-        <div className="relative cursor-pointer w-16 h-16 lg:w-20 lg:h-20">
+    <nav id="home" className="w-full bg-white fixed z-[9999]">
+      <div className="flex w-4/5 mx-auto items-center justify-between py-4 h-[8vh] lg:h-[12vh]">
+        <div className="relative cursor-pointer w-16 h-16 lg:w-18 lg:h-18">
           <Image
             src="/images/logo.png"
             alt="logo"

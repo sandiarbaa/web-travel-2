@@ -2,16 +2,8 @@ import React, { useEffect } from "react";
 import SearchBox from "./Helper/SearchBox";
 
 const Hero = () => {
-  useEffect(() => {
-    // Hapus atribut 'fdprocessedid' dari semua elemen input
-    const inputs = document.querySelectorAll("input[fdprocessedid]");
-    inputs.forEach((input) => {
-      input.removeAttribute("fdprocessedid");
-    });
-  }, []);
-
   return (
-    <section className="relative w-[100%] h-[88vh]">
+    <section className="relative w-[100%] h-[100vh]">
       <div className="absolute top-0 left-0 w-[100%] h-[100%] bg-blue-800 opacity-50"></div>
       <video
         src="/images/hero.mp4"

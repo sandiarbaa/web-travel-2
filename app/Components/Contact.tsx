@@ -3,7 +3,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="pt-[8rem] pb-[3rem]">
+    <section id="contact" className="py-[8rem]">
       <div className="w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[3rem]">
         <div data-aos="fade-right" data-aos-delay="600">
           <Image

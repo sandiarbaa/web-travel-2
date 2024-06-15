@@ -3,7 +3,7 @@ import DestinationSlider from "./Helper/DestinationSlide";
 
 const TopDestination = () => {
   return (
-    <section id="tour" className="mt-[6rem] mb-[4rem]">
+    <section id="tour" className="mt-[6rem] mb-[4rem] py-20">
       <h1 className="heading">Top Destination</h1>
       <div className="mt-[4rem] w-[80%] mx-auto">
         {/* Destination Slider */}
